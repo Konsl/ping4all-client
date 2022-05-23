@@ -1,4 +1,4 @@
-# Ping4All-Client
+# Ping4All Client
 
 Web App written using Nuxt 3, client for [klassenserver7b / Ping4All](https://github.com/klassenserver7b/Ping4All)
 
