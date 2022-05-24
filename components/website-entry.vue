@@ -20,13 +20,15 @@ const emit = defineEmits<{
 <template>
     <div class="global-text transition-opacity duration-200 ease-in-out" :class="{ 'opacity-50': !website.enabled }">
         <div class="flex items-center justify-between rounded-lg p-4 bg-gray-300 dark:bg-gray-700">
-            <a class="flex focus-link transition-colors duration-200 ease-in-out grow w-full min-w-0"
-                :href="website.url" target="blank" :title="website.name">
-                <div class="max-w-[calc(100%-2rem)] overflow-ellipsis overflow-hidden">
+            <div class="flex focus-link transition-colors duration-200 ease-in-out grow w-full min-w-0">
+                <a class="max-w-[calc(100%-2rem)] overflow-ellipsis overflow-hidden" :href="website.url" target="blank"
+                    :title="website.name">
                     {{ website.name }}
-                </div>
-                <ExternalLinkIcon class="h-6 w-6 ml-2" aria-hidden="true" />
-            </a>
+                </a>
+                <a class="h-6 w-6 ml-2" :href="website.url" target="blank" :title="website.name">
+                    <ExternalLinkIcon aria-hidden="true" />
+                </a>
+            </div>
             <div class="flex ml-4">
                 <Switch aria-label="enabled" :title="website.enabled ? 'Disable' : 'Enable'" name="Enabled"
                     v-model="website.enabled" :class="website.enabled ? 'bg-green-400' : 'bg-gray-500'"
